@@ -1,0 +1,61 @@
+@import "../../styles.scss";
+.main {
+  width: 80%;
+  margin: auto;
+  position: relative;
+}
+
+mat-spinner {
+  margin: 1rem auto;
+}
+
+h3 {
+  text-align: center;
+  position: relative;
+}
+p {
+  display: flex;
+  padding: 1em;
+  span {
+    flex: 0 0 3rem;
+    font-size: 0.7em;
+    text-align: center;
+    flex-basis: 3rem;
+    border: 1px solid $borderColor;
+    padding: 0 0.1em;
+    margin: 0 0.2rem;
+    @include border-radius(2px);
+  }
+  span:first-child {
+    font-size: 0.9em;
+    font-style: italic;
+    flex-basis: 15rem;
+    text-align: left;
+    border: none;
+  }
+  span.spacer {
+    flex: 1 1 auto;
+    border: none;
+    text-align:right;
+  }
+
+  .done {
+    background-color: $primaryColor;
+    color: white;
+  }
+
+  .in-progress {
+    @include gradient($primaryColor, $accentColor);
+    color: white;
+  }
+
+  .not-started {
+    background-color: $accentColor;
+    color: white;
+  }
+}
+
+mat-list {
+  position: relative;
+  top: -1rem;
+}

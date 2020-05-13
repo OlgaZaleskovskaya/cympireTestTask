@@ -1,0 +1,17 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<div class="main">
+  <h3>Scenario Visualization</h3>
+  <p class="campaign"><span>{{campaign.campaign_name}}</span><span class="spacer">Step Status:
+    </span><span class="done">Done</span>
+    <span class="in-progress">In progress</span>
+    <span class="not-started">Not started</span></p>
+
+  <mat-list *ngFor="let team of campaign.team_instances">
+    <mat-list-item>
+      <app-team [team]="team" [progress]="team.progress"></app-team>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+  <div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+$primaryColor:#009688;
+$accentColor: #f57c00;
+
+$primaryColorLight: #80cbc4;
+$accentColorLight: #ff9800;
+
+$borderColor: #a4a7a4;
+$textColor: #393939;
+
+
+@mixin box-shadow($left, $top, $radius, $color) {
+	box-shadow: $left $top $radius $color;
+	-webkit-box-shadow: $left $top $radius $color;
+	-moz-box-shadow: $left $top $radius $color;
+}
+
+@mixin border-radius($radius) {
+	border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+}
+
+@mixin gradient($color1, $color2) {
+	background: $color1;
+background: -moz-linear-gradient(left, $color1 0%, $color2 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, $color1), color-stop(100%, $color2));
+background: -webkit-linear-gradient(left, $color1 0%, $color2 100%);
+background: -o-linear-gradient(left, $color1 0%, $color2 100%);
+background: -ms-linear-gradient(left, $color1 0%, $color2 100%);
+background: linear-gradient(to right, $color1 0%, $color2 100%);
+
+}

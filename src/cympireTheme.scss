@@ -1,0 +1,15 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+
+$cympire-app-primary: mat-palette($mat-teal);
+$cympire-app-accent:  mat-palette($mat-orange, A200, A100, A400);
+
+
+$cympire-app-warn:    mat-palette($mat-red);
+
+
+$cympire-app-theme: mat-light-theme($cympire-app-primary, $cympire-app-accent, $cympire-app-warn);
+
+
+@include angular-material-theme($cympire-app-theme);

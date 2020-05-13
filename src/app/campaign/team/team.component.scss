@@ -1,0 +1,144 @@
+@import "../../../styles.scss";
+
+:host {
+  width: 100%;
+  height: 30px;
+}
+div.progressBar,
+div.teamData {
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  height: inherit;
+}
+
+p.point {
+  font-size: 0.7em;
+  border: 1px solid $borderColor;
+  text-align: center;
+  border-left: none;
+  color: $textColor;
+  flex: 1 1 100%;
+}
+
+div.teamData p {
+  font-size: 0.7em;
+  position: relative;
+  top: -10px;
+  color: $textColor;
+  flex: 1 1 100%;
+}
+
+p.teamName {
+  text-align: left;
+  flex: 1 1 60%;
+  padding-left: 1rem;
+  cursor: pointer;
+  span:hover {
+    color: $primaryColor;
+  }
+}
+
+p.teamName span {
+  font-style: normal;
+  font-weight: 600;
+  top: 0;
+}
+
+p.progress {
+  text-align: right;
+  padding-right: 1rem;
+}
+
+p.point:first-child {
+  /*  flex: 0 0 30%;*/
+  border-left: 3px solid $primaryColor;
+}
+
+p.point:last-child {
+  /*  flex: 0 0 30%;*/
+  border-right: 3px solid $accentColor;
+}
+
+.notStarted {
+  background-color: $accentColorLight;
+}
+
+.notStarted:hover {
+  color: white;
+  background-color: $accentColor;
+}
+
+.inProgress {
+  @include gradient($primaryColorLight, $accentColorLight);
+}
+
+.inProgress:hover {
+  color: white;
+  @include gradient($primaryColor, $accentColor);
+}
+
+.done {
+  background-color: $primaryColorLight;
+}
+
+.done:hover {
+  color: white;
+  background-color: $primaryColor;
+}
+
+.doneData,
+.inProgressData,
+.notStartedData {
+  padding-left: 1rem;
+  border-left: 3px solid $primaryColor;
+}
+.inProgressData {
+  border-color: $borderColor;
+}
+
+.notStartedData {
+  border-color: $accentColor;
+}
+
+span {
+  font-size: 0.7em;
+  font-style: italic;
+  position: relative;
+  top: -0.5rem;
+}
+
+::ng-deep .tooltip {
+  background-color: white;
+  color: black !important;
+  font-size: 0.8em;
+  font-style: italic;
+  font-weight: lighter;
+  border: 1px solid $borderColor;
+  position: relative;
+  top: -1rem;
+}
+
+.details {
+  position: relative;
+  background-color: white;
+}
+
+.details ul {
+  position: absolute;
+  z-index: 4;
+  top: -1.7rem;
+  background-color: white;
+  @include box-shadow(2px, 2px, 5 px, black);
+  padding: 0.5em 1em;
+  border-radius: 10px;
+}
+
+.details ul li {
+  list-style-type: none;
+  font-size: 0.5rem;
+}
+
+.details ul li:hover {
+  background-color: whitesmoke;
+}

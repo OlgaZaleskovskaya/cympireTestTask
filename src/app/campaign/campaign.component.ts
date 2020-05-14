@@ -28,6 +28,7 @@ export class CampaignComponent implements OnInit, OnDestroy {
       .subscribe(res => {
         this.isLoading = false;
         this.campaign = res;
+
         let  transformedTeam = [...res.team_instances];
         transformedTeam.forEach((item, index, arr) => {
           item.progress = this.calculateTeamProgress(item);
@@ -41,7 +42,6 @@ export class CampaignComponent implements OnInit, OnDestroy {
       return -1;
     }
     var result = team.steps.reduce(function (previousValue, currentItem, index, arr) {
-
       let current;
       switch (currentItem.status) {
         case "done":

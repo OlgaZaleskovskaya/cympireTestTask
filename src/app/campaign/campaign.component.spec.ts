@@ -39,7 +39,7 @@ describe('CampaignComponent.calculateTeamProgress', () => {
         step_name: "stepName2",
       }]
     }, {
-      team_id: "team2",
+      team_id: "team3",
       team_name: "teamName1",
       steps: [{
         status: 'not-started',
@@ -51,6 +51,11 @@ describe('CampaignComponent.calculateTeamProgress', () => {
         step_id: "stepId2",
         step_name: "stepName2",
       }]
+    },
+    {
+      team_id: "team4",
+      team_name: "teamName4",
+      steps: []
     }]
   };
 
@@ -70,6 +75,11 @@ describe('CampaignComponent.calculateTeamProgress', () => {
     const result = component.calculateTeamProgress(campaign.team_instances[2]);
 
     expect(result).toBe(0.5);
+  });
+  it('should return -1 if all steps.length is equal to 0', () => {
+    const result = component.calculateTeamProgress(campaign.team_instances[3]);
+
+    expect(result).toBe(-1);
   });
 
   it('should set campain property with an item recieved from the server', () => {

@@ -37,7 +37,11 @@ export class CampaignComponent implements OnInit, OnDestroy {
   };
 
   calculateTeamProgress(team: ITeam): number {
+    if(team.steps.length === 0){
+      return -1;
+    }
     var result = team.steps.reduce(function (previousValue, currentItem, index, arr) {
+
       let current;
       switch (currentItem.status) {
         case "done":

@@ -18,6 +18,7 @@ export class CampaignService {
     return this.http.get<{ campaign: ICampaign }>(URL)
       .pipe(map(campaignData => {
         const campaignDataCopy = { ...campaignData };
+        console.log('compaign', campaignDataCopy.campaign);
         return campaignDataCopy.campaign;
       }));
   }

@@ -1,6 +1,6 @@
 import { CampaignComponent } from './campaign.component';
 
-import { ICampaign, ITeam } from './campaign.model';
+import { ICampaign } from './campaign.model';
 
 import { CampaignService } from './campaign.service';
 import { of } from 'rxjs';
@@ -76,11 +76,11 @@ describe('CampaignComponent.calculateTeamProgress', () => {
 
     spyOn(service, 'getCampaign').and.callFake(() => {
       return of(campaign);
+    });
+
+    component.ngOnInit();
+
+    expect(component.campaign).toBe(campaign);
   });
-
-  component.ngOnInit();
-
-  expect(component.campaign).toBe(campaign);
-});
 
 });

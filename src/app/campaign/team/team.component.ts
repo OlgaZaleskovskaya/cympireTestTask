@@ -24,7 +24,6 @@ import { ITeam } from '../campaign.model';
         animate('500ms', style({ opacity: 0 }))
       ])
     ])
-
   ]
 })
 
@@ -48,9 +47,8 @@ export class TeamComponent {
 
   onOpen() {
     this.isOpened = true;
-    console.log('click on open', this.isOpened);
-
   }
+
   onClose() {
     if (this.isOpened = true) {
       this.isOpened = false

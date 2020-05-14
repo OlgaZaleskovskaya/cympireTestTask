@@ -3,8 +3,8 @@ import { Directive, ElementRef, Renderer2, OnInit,  Input } from '@angular/core'
 @Directive({
   selector: '[backGround]'
 })
-export class BackgroundDirective implements OnInit {
 
+export class BackgroundDirective implements OnInit {
   content: ElementRef;
   @Input() status: string;
   @Input() element: number;

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { ICampaign, ITeam } from './campaign.model';
-import { Subscription } from 'rxjs';
 import { CampaignService } from './campaign.service';
 
 @Component({
@@ -22,8 +22,8 @@ export class CampaignComponent implements OnInit, OnDestroy {
       campaign_instance_id: "",
       campaign_name: "",
       team_instances: [],
-
     };
+
     this.campSubcription=this.campService.getCampaign()
       .subscribe(res => {
         this.isLoading = false;
@@ -33,18 +33,7 @@ export class CampaignComponent implements OnInit, OnDestroy {
           item.progress = this.calculateTeamProgress(item);
         });
       }
-
     );
-   /*  this.campSubcription = this.campService.getCampaignUpdateListener()
-      .subscribe(res => {
-        this.isLoading = false;
-        this.campaign = res;
-        let  transformedTeam = [...res.team_instances];
-        transformedTeam.forEach((item, index, arr) => {
-          item.progress = this.calculateTeamProgress(item);
-        });
-      }
-      ); */
   };
 
   calculateTeamProgress(team: ITeam): number {
@@ -63,7 +52,6 @@ export class CampaignComponent implements OnInit, OnDestroy {
       }
       return (previousValue + current)
     }, 0);
-    console.log('progress', result/team.steps.length );
     return result/team.steps.length;
   }
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CampaignService } from '../campaign/campaign.service';
+
 
 @Component({
   selector: 'app-header',
@@ -8,9 +8,6 @@ import { CampaignService } from '../campaign/campaign.service';
 })
 
 export class HeaderComponent {
-  constructor(private service: CampaignService) { }
+  constructor() { }
 
-  onRefresh() {
-    const smth = this.service.getCampaign().subscribe();
-  }
 }

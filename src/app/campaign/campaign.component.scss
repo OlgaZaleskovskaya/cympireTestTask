@@ -17,19 +17,20 @@ p {
   display: flex;
   padding: 1em;
   span {
-    flex: 0 0 3rem;
+
     font-size: 0.7em;
     text-align: center;
     flex-basis: 3rem;
     border: 1px solid $borderColor;
+    border-left: none;
     padding: 0 0.1em;
-    margin: 0 0.2rem;
+
     @include border-radius(2px);
   }
   span:first-child {
     font-size: 0.9em;
     font-style: italic;
-    flex-basis: 15rem;
+    flex-basis: 7rem;
     text-align: left;
     border: none;
   }
@@ -42,6 +43,7 @@ p {
   .done {
     background-color: $primaryColor;
     color: white;
+    border-left:1px;
   }
 
   .in-progress {

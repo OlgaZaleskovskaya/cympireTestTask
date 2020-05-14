@@ -2,13 +2,13 @@
   <p class="point" matTooltipClass="primary-tooltip" matTooltipClass="tooltip" matTooltip={{getName(i)}} backGround
     [status]="step.status" [element]="1" *ngFor="let step of team.steps ; let i=index">
     step {{i+1 }}</p>
-    <p *ngIf="!getProgress()">NO STEAPS ARE AVAILABLE</p>
+    <p *ngIf="!getProgress()">NO STEPS ARE AVAILABLE</p>
 </div>
 <div class="teamData">
   <p (clickOutside)="onClose()" class="teamName" role="button" (click)="onOpen()">Team:&nbsp;
     <span>{{team.team_name}}</span></p>
   <p class="space"></p>
-  <p class="progress" *ngIf="getProgress()">progress: {{getProgress()}}%</p>
+  <p class="progress" *ngIf="getProgress()">progress: {{getProgress() | percent}}</p>
 </div>
 <div class="details">
   <ul *ngIf="isOpened" @myInsertRemoveTrigger>

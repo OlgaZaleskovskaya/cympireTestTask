@@ -28,8 +28,6 @@ app.get('/api/compaign', (req, res, next) => {
       if (err || response.statusCode != 200 ) {
         return res.status(500).send({ message: err })
       };
-
-      console.log(response.statusCode);
       return res.status(200).send({
         campaign: JSON.parse(response.body)
       });

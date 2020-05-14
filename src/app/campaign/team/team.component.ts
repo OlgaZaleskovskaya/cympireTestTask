@@ -39,7 +39,7 @@ export class TeamComponent {
   constructor() { }
 
   getProgress() {
-    return Math.round(this.progress);
+    return this.progress;
   }
 
   getName(i: number): string {

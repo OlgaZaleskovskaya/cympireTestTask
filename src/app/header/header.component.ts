@@ -8,9 +8,9 @@ import { CampaignService } from '../campaign/campaign.service';
 })
 
 export class HeaderComponent {
-  constructor(private service: CampaignService){}
+  constructor(private service: CampaignService) { }
 
   onRefresh() {
-this.service.getCampaign();
+    const smth = this.service.getCampaign().subscribe();
   }
 }

@@ -51,12 +51,10 @@ p.progress {
 }
 
 p.point:first-child {
-  /*  flex: 0 0 30%;*/
   border-left: 3px solid $primaryColor;
 }
 
 p.point:last-child {
-  /*  flex: 0 0 30%;*/
   border-right: 3px solid $accentColor;
 }
 
@@ -122,16 +120,17 @@ span {
 .details {
   position: relative;
   background-color: white;
+
 }
 
 .details ul {
   position: absolute;
   z-index: 4;
   top: -1.7rem;
-  background-color: white;
-  @include box-shadow(2px, 2px, 5 px, black);
+  background-color:white;
   padding: 0.5em 1em;
   border-radius: 10px;
+     @include box-shadow(2px, 2px, 5px, black);
 }
 
 .details ul li {

@@ -13,7 +13,8 @@
 <div class="details">
   <ul *ngIf="isOpened" @myInsertRemoveTrigger>
     <li *ngFor="let step of team.steps, let k=index" backGround [status]="step.status" [element]="2">
-      {{k+1}}.&nbsp;{{step.step_name}} &nbsp;is &nbsp;{{step.status}}
+      <p > {{k+1}}.&nbsp;{{step.step_name}} &nbsp;is &nbsp;{{step.status}}</p>
+
     </li>
   </ul>
 </div>

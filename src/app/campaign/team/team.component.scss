@@ -88,15 +88,18 @@ p.point:last-child {
 .doneData,
 .inProgressData,
 .notStartedData {
-  padding-left: 1rem;
-  border-left: 3px solid $primaryColor;
-}
-.inProgressData {
-  border-color: $borderColor;
+  margin: 0px auto;
+  padding-left: 3px;
+  background-color: $primaryColor;
 }
 
+.inProgressData {
+  @include gradientH($primaryColor, $accentColor);
+}
+
+
 .notStartedData {
-  border-color: $accentColor;
+background-color: $accentColor;
 }
 
 span {
@@ -120,17 +123,26 @@ span {
 .details {
   position: relative;
   background-color: white;
-
+  ul li p{
+    background-color: white;
+    margin: 0;
+    padding-left: 5px;
+    height: 1.5rem;
+    line-height: 1.5rem;
+  }
 }
+
+
+
 
 .details ul {
   position: absolute;
   z-index: 4;
   top: -1.7rem;
-  background-color:white;
+  background-color: white;
   padding: 0.5em 1em;
   border-radius: 10px;
-     @include box-shadow(2px, 2px, 5px, black);
+  @include box-shadow(2px, 2px, 5px, black);
 }
 
 .details ul li {

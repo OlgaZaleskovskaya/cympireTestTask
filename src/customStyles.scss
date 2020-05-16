@@ -28,5 +28,14 @@ background: -webkit-linear-gradient(left, $color1 0%, $color2 100%);
 background: -o-linear-gradient(left, $color1 0%, $color2 100%);
 background: -ms-linear-gradient(left, $color1 0%, $color2 100%);
 background: linear-gradient(to right, $color1 0%, $color2 100%);
+}
+@mixin gradientH($color1, $color2) {
+	background: $color1;
+background: -moz-linear-gradient(top, $color1 0%, $color2 100%);
+background: -webkit-gradient(top left , top right, color-stop(0%, $color1), color-stop(100%, $color2));
+background: -webkit-linear-gradient(top, $color1 0%, $color2 100%);
+background: -o-linear-gradient(top, $color1 0%, $color2 100%);
+background: -ms-linear-gradient(top, $color1 0%, $color2 100%);
+background: linear-gradient(to bottom, $color1 0%, $color2 100%);
 
 }

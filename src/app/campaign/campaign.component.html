@@ -5,7 +5,7 @@
     </span><span class="done">Done</span>
     <span class="in-progress">In progress</span>
     <span class="not-started">Not started</span></p>
-
+<p *ngIf="campaign.team_instances.length == 0">NO INFO</p>
   <mat-list *ngFor="let team of campaign.team_instances">
     <mat-list-item>
       <app-team [team]="team" [progress]="team.progress"></app-team>
